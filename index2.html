@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 2 lab 2</title>
+</head>
+<body>
+<script>
+    
+    //Question 04
+    function getValue(){
+        let value = 0;
+        console.log(value);
+        return new Promise(function (resolve, reject){
+            value = 10;
+            setTimeout(function (){
+                resolve(value);
+            }, 2000);
+        });
+    }
+
+    async function print(){
+        let newAwaitValue = await getValue();
+        console.log(newAwaitValue);
+        console.log("Asynchronous...!");
+    }
+    print();
+    console.log("It is skipped..!");
+
+    //Question 05
+    class Vehicle{
+        static vehicleCount = 0;
+        constructor(type) {
+            this.type = type;
+            Vehicle.vehicleCount++;
+        }
+        drive(){
+            console.log(this.type + " is driving.");
+        }
+    }
+    let vehicle = new Vehicle("Subaru");
+    vehicle.drive();
+    console.log("Vehicle count is " +Vehicle.vehicleCount);
+
+    class Car extends Vehicle{
+        constructor(type) {
+            super(type);
+        }
+        wheelBalancing(){
+            console.log(this.type + " wheels are balanced..!");
+        }
+    }
+    let car = new Car("BMW");
+
+    car.wheelBalancing();
+    car.drive();
+    console.log("Vehicle count is " +Vehicle.vehicleCount);
+
+
+</script>
+</body>
+</html>
