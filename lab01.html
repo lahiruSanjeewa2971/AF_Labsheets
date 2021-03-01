@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Question 01
+    let printMe = function (){
+        console.log("Hello world.!");
+    }
+    printMe();
+
+    let printMe2 = function (x){
+        console.log(`Hello ${x}.!`);
+    }
+    printMe2("World");
+
+    //Question 02
+    let boy = {
+        firstName : "Lahiru",
+        lastName : "Sanjeewa",
+        age : 23,
+        selfDescription : function (){
+            return `${this.firstName} is ${this.age} Years Old.`;
+        }
+    };
+    console.log(boy.selfDescription());
+
+    //Question 03
+    window.vehicleName = "BMW";
+    let printVehicleName = function (vName){
+        document.write(`Vehicle name is ${vName}<br>`);
+    }
+    printVehicleName(window.vehicleName);
+
+    let Vehicle = {
+        vehicleName : "Subaru",
+        getVehicleName : function (){
+            printVehicleName(this.vehicleName);
+        }
+    }
+    Vehicle.getVehicleName();
+    printVehicleName(this.vehicleName);
+
+    //Question 04
+    let taxPercentage = 0.8;
+    let vat = function (tax){
+        let  amount = 10000;
+        let lastCalculate = function (){
+            return function (){
+                amount = amount = amount * tax;
+                return amount;
+            }();
+        }
+        return lastCalculate();
+    }
+    console.log(vat(taxPercentage));
+
+    //Question 05
+    fetch('http://jsonplaceholder.typicode.com/posts')
+    .then(responce => responce.json())
+    .then(data => {
+        document.write(JSON.stringify(data))
+    })
+    .catch(error => console.error(error))
+
+
+</script>
+</body>
+</html>
