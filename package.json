@@ -1,0 +1,21 @@
+{
+  "name": "lab06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "lahiru",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "mongodb": "^3.6.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "koa-bodyparser": "^4.3.0"
+  }
+}
